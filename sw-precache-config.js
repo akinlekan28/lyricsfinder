@@ -8,7 +8,7 @@ module.exports = {
   ],
   swFilePath: "./build/service-worker.js",
   stripPrefix: "build/",
-  handleFetch: false,
+  handleFetch: true,
   runtimeCaching: [
     {
       urlPattern: /http?:\/\/api.+/,

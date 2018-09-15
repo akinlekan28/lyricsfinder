@@ -18,12 +18,25 @@ export class Provider extends Component {
       )
       .then(res => {
         this.setState({ track_list: res.data.message.body.track_list });
-        console.log(res.data);
+        let homeTrackList;
+        if (localStorage.getItem("track" === null)) {
+          homeTrackList = [];
+        } else {
+          homeTrackList = res.data.message.body.track_list;
+          localStorage.setItem("track", JSON.stringify(homeTrackList));
+        }
       })
       .catch(err => console.log(err));
+
+    if (!navigator.onLine) {
+      const localTrack = JSON.parse(localStorage.getItem("track"));
+
+      this.setState({ track_list: localTrack });
+    }
   }
 
   render() {
+    console.log(this.state);
     return (
       <Context.Provider value={this.state}>
         {this.props.children}

@@ -20,6 +20,15 @@ class Lyrics extends Component {
       )
       .then(res => {
         this.setState({ lyrics: res.data.message.body.lyrics });
+        let payload;
+        if (localStorage.getItem("lyrics") === null) {
+          payload = [];
+          localStorage.setItem("lyrics", JSON.stringify(payload));
+        } else {
+          payload = JSON.parse(localStorage.getItem("lyrics"));
+          payload.push(res.data.message.body.lyrics);
+          localStorage.setItem("lyrics", JSON.stringify(payload));
+        }
 
         return axios
           .get(
@@ -29,9 +38,37 @@ class Lyrics extends Component {
           )
           .then(res => {
             this.setState({ track: res.data.message.body.track });
+            let payload2;
+            if (localStorage.getItem("singletrack") === null) {
+              payload2 = [];
+              localStorage.setItem("singletrack", JSON.stringify(payload2));
+            } else {
+              payload2 = JSON.parse(localStorage.getItem("singletrack"));
+              payload2.push(res.data.message.body.track);
+              localStorage.setItem("singletrack", JSON.stringify(payload2));
+            }
           });
       })
       .catch(err => console.log(err));
+
+    //Load contents from localstorage for offline use
+    if (!navigator.onLine) {
+      const track = JSON.parse(localStorage.getItem("singletrack"));
+
+      const singleTrack = track.filter(identified => {
+        return identified.track_id.toString() === id;
+      });
+
+      const lyrics = JSON.parse(localStorage.getItem("lyrics"));
+
+      let lyricsId = singleTrack[0].lyrics_id;
+      const singleLyrics = lyrics.filter(lyricObject => {
+        return lyricObject.lyrics_id.toString() === lyricsId.toString();
+      });
+
+      this.setState({ track: singleTrack[0] });
+      this.setState({ lyrics: singleLyrics[0] });
+    }
   }
 
   render() {
@@ -63,13 +100,19 @@ class Lyrics extends Component {
             <li className="list-group-item">
               <strong>Album ID</strong>: {track.album_id}
             </li>
-            <li className="list-group-item">
-              <strong>Song Genre</strong>:{" "}
-              {
-                track.primary_genres.music_genre_list[0].music_genre
-                  .music_genre_name
-              }
-            </li>
+            {track.primary_genres === undefined ? (
+              <li className="list-group-item">
+                <strong>Song Genre</strong>:{" "}
+                {
+                  track.primary_genres.music_genre_list[0].music_genre
+                    .music_genre_name
+                }
+              </li>
+            ) : (
+              <li className="list-group-item">
+                <strong>Song Genre</strong>: Unknown
+              </li>
+            )}
 
             <li className="list-group-item">
               <strong>Explicit Words</strong>:

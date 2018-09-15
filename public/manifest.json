@@ -1,15 +1,25 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "LyricsFinder",
+  "name": "Get your lyrics instantly",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "icon1.svg",
+      "sizes": "192x192",
+      "type": "image/svg"
+    },
+    {
+      "src": "icon3.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon2.svg",
+      "sizes": "512x512",
+      "type": "image/svg"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#349ad3",
   "background_color": "#ffffff"
 }

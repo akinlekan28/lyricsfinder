@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
+    "build": "react-scripts build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
     "eject": "react-scripts eject"
   }

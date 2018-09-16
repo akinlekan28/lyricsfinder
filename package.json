@@ -18,12 +18,5 @@
     "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
     "deploy": "npm run build && gh-pages -d build",
     "eject": "react-scripts eject"
-  },
-  "homepage": "https://akinlekan28.github.io/lyricsfinder",
-  "keywords": [
-    "react",
-    "reatjs",
-    "context-api",
-    "musixmatch"
-  ]
+  }
 }

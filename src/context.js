@@ -34,7 +34,6 @@ export class Provider extends Component {
         this.setState({ track_list: res.data.message.body.track_list });
         let homeTrackList;
         if (localStorage.getItem("track" === null)) {
-          homeTrackList = [];
           homeTrackList = res.data.message.body.track_list;
           localStorage.setItem("track", JSON.stringify(homeTrackList));
         } else {

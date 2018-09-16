@@ -23,6 +23,7 @@ class Lyrics extends Component {
         let payload;
         if (localStorage.getItem("lyrics") === null) {
           payload = [];
+          payload.push(res.data.message.body.lyrics);
           localStorage.setItem("lyrics", JSON.stringify(payload));
         } else {
           payload = JSON.parse(localStorage.getItem("lyrics"));
@@ -41,6 +42,7 @@ class Lyrics extends Component {
             let payload2;
             if (localStorage.getItem("singletrack") === null) {
               payload2 = [];
+              payload2.push(res.data.message.body.track);
               localStorage.setItem("singletrack", JSON.stringify(payload2));
             } else {
               payload2 = JSON.parse(localStorage.getItem("singletrack"));

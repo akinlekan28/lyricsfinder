@@ -3,9 +3,9 @@
   "name": "Get your lyrics instantly",
   "icons": [
     {
-      "src": "icon1.svg",
-      "sizes": "192x192",
-      "type": "image/svg"
+      "src": "144.png",
+      "sizes": "144x144",
+      "type": "image/png"
     },
     {
       "src": "icon1.svg",

@@ -8,12 +8,12 @@
       "type": "image/svg"
     },
     {
-      "src": "icon3.svg",
+      "src": "icon1.svg",
       "type": "image/svg",
       "sizes": "192x192"
     },
     {
-      "src": "icon2.svg",
+      "src": "icon1.svg",
       "sizes": "512x512",
       "type": "image/svg"
     }

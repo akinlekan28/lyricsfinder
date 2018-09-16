@@ -1,5 +1,5 @@
 // Flag for enabling cache in production
-var doCache = false;
+var doCache = true;
 var CACHE_NAME = "pwa-app-cache";
 // Delete old caches
 self.addEventListener("activate", event => {
@@ -28,7 +28,7 @@ self.addEventListener("install", function(event) {
           .then(assets => {
             // We will cache initial page and the main.js
             // We could also cache assets like CSS and images
-            const urlsToCache = ["/", "/icon1.svg", "/icon2.svg"];
+            const urlsToCache = ["/", "/offline", "/icon1.svg"];
             cache.addAll(urlsToCache);
           });
       })

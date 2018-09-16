@@ -1,21 +1,27 @@
 module.exports = {
   staticFileGlobs: [
+    "/",
+    "/index.html",
+    "/offline",
     "build/static/css/**.css",
     "build/static/js/**.js",
     "build/static/media/**.svg",
-    "build/**.svg",
-    "/offline"
+    "build/**.svg"
   ],
   swFilePath: "./build/service-worker.js",
   stripPrefix: "build/",
-  handleFetch: true,
+  handleFetch: false,
   runtimeCaching: [
     {
-      urlPattern: /http?:\/\/api.+/,
+      urlPattern: /https?:\/\/cors-anywhere.+/,
       handler: "fastest"
     },
     {
-      urlPattern: /https?:\/\/cors-anywhere.+/,
+      urlPattern: /https?:\/\/stackpath.+/,
+      handler: "fastest"
+    },
+    {
+      urlPattern: /https?:\/\/use.+/,
       handler: "fastest"
     }
   ],

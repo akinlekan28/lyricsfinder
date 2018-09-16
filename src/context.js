@@ -35,6 +35,8 @@ export class Provider extends Component {
         let homeTrackList;
         if (localStorage.getItem("track" === null)) {
           homeTrackList = [];
+          homeTrackList = res.data.message.body.track_list;
+          localStorage.setItem("track", JSON.stringify(homeTrackList));
         } else {
           homeTrackList = res.data.message.body.track_list;
           localStorage.setItem("track", JSON.stringify(homeTrackList));

@@ -23,6 +23,14 @@ module.exports = {
     {
       urlPattern: /https?:\/\/use.+/,
       handler: "fastest"
+    },
+    {
+      urlPattern: /https?:\/\/stackpath.bootstrapcdn.+/,
+      handler: "fastest"
+    },
+    {
+      urlPattern: /https?:\/\/use.fontawesome.+/,
+      handler: "fastest"
     }
   ],
   navigateFallback: "/offline"

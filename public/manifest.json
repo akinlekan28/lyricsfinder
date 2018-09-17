@@ -1,7 +1,7 @@
 {
   "short_name": "LyricsFinder",
   "name": "Get your lyrics instantly",
-  "start_url": "/",
+  "start_url": "/lyricsfinder/",
   "display": "standalone",
   "theme_color": "#349ad3",
   "background_color": "#ffffff",

@@ -1,6 +1,10 @@
 {
   "short_name": "LyricsFinder",
   "name": "Get your lyrics instantly",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#349ad3",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "144.png",
@@ -17,9 +21,5 @@
       "sizes": "512x512",
       "type": "image/svg"
     }
-  ],
-  "start_url": "/lyricsfinder",
-  "display": "standalone",
-  "theme_color": "#349ad3",
-  "background_color": "#ffffff"
+  ]
 }

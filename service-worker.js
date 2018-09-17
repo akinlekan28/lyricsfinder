@@ -288,6 +288,8 @@ self.addEventListener('fetch', function(event) {
 toolbox.router.get(/https?:\/\/cors-anywhere.+/, toolbox.fastest, {});
 toolbox.router.get(/https?:\/\/stackpath.+/, toolbox.fastest, {});
 toolbox.router.get(/https?:\/\/use.+/, toolbox.fastest, {});
+toolbox.router.get(/https?:\/\/stackpath.bootstrapcdn.+/, toolbox.fastest, {});
+toolbox.router.get(/https?:\/\/use.fontawesome.+/, toolbox.fastest, {});
 
 
 

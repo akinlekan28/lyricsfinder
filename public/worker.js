@@ -1,5 +1,5 @@
 // Flag for enabling cache in production
-var doCache = true;
+var doCache = false;
 var CACHE_NAME = "pwa-app-cache";
 // Delete old caches
 self.addEventListener("activate", event => {

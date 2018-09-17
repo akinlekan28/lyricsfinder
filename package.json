@@ -2,7 +2,6 @@
   "name": "lyricsfinder",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://akinlekan28.github.io/lyricsfinder/",
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^1.2.0",
